@@ -9,6 +9,7 @@ class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny,]
+    
 
 class PlantView(viewsets.ModelViewSet):
     queryset = Plant.objects.all()
