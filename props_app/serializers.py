@@ -38,12 +38,12 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class PlantSerializer(serializers.ModelSerializer):
-    users = UserObjectSerializer(many=True)
+    # users = UserObjectSerializer(many=True)
     # favorites = FavoriteObjectSerializer(many=True)
     
     class Meta:
         model = Plant
-        fields = ('id', 'name', 'img', 'description', 'users')
+        fields = ('id', 'name', 'img', 'description')
 
 
 class FavoriteSerializer(serializers.ModelSerializer):
