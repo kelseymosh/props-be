@@ -12,7 +12,7 @@ class UserObjectSerializer(serializers.ModelSerializer):
 class PlantObjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plant
-        fields = ('id', 'name', 'img', 'description', 'users', 'favorites')
+        fields = ('id', 'name', 'img', 'description', 'wishlist', 'users', 'favorites')
 
 
 class FavoriteObjectSerializer(serializers.ModelSerializer):
@@ -43,7 +43,7 @@ class PlantSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Plant
-        fields = ('id', 'name', 'img', 'description')
+        fields = ('id', 'name', 'img', 'description', 'wishlist')
 
 
 class FavoriteSerializer(serializers.ModelSerializer):

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
-    full_name = models.CharField(max_length=50, null=True)
+    full_name = models.CharField(max_length=250, null=True)
 
     def __str__(self):
         return self.username
@@ -12,6 +12,7 @@ class User(AbstractUser):
 class Plant(models.Model):
     name = models.CharField(max_length=100, null=True)
     img = models.CharField(max_length=250, null=True)
+    wishlist = models.CharField(max_length=250, null=True)
     description = models.CharField(max_length=500, null=True)
     users = models.ManyToManyField(User, related_name='users', through='Favorite')
 
