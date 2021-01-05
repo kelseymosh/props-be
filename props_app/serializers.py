@@ -25,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
     favorites = FavoriteObjectSerializer(many=True, required=False)
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'full_name', 'favorites')
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'full_name', 'favorites')
 
     def create(self, validated_data):
         user = User.objects.create(
