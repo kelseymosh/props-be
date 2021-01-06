@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 class UserObjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'full_name')
+        fields = ('id', 'username', 'password', 'full_name', 'profile_img')
 
 
 class PlantObjectSerializer(serializers.ModelSerializer):
@@ -25,7 +25,7 @@ class UserSerializer(serializers.ModelSerializer):
     favorites = FavoriteObjectSerializer(many=True, required=False)
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'full_name', 'favorites')
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'full_name', 'profile_img', 'favorites')
 
     def create(self, validated_data):
         user = User.objects.create(
